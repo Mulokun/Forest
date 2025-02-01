@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace Forest
@@ -96,12 +98,20 @@ namespace Forest
 
         public void Action()
         {
-            if (game[GameVariables.Seeds].ModifiedValue > 0)
+            Vector2 p = Mouse.current.position.value;
+            PointerEventData eventData = new(EventSystem.current)
+            {
+                position = p
+            };
+
+            List<RaycastResult> results = new();
+            EventSystem.current.RaycastAll(eventData, results);
+
+            if (results.Count <= 0 && game[GameVariables.Seeds].ModifiedValue > 0)
             {
                 UpdateActionData();
                 game.Action();
 
-                Vector2 p = Mouse.current.position.value;
                 for (int i = 0; i < gainTreeAction.Value; i++)
                 {
                     drawTree.DrawScreenPosition(p);
