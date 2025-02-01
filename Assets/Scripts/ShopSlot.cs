@@ -61,6 +61,7 @@ namespace Forest
         {
             itemName.text = $"{item.Name} - Rank {currentRank + 1}";
             itemPrice.text = price + " Seeds";
+            CheckIfAffordable(0, 0);
         }
 
         public void TryBuy()
@@ -69,7 +70,6 @@ namespace Forest
             {
                 currentRank++;
                 UpdateInfo();
-                CheckIfAffordable(0, 0);
                 if (currentRank >= item.MaximumRank)
                 {
                     gameObject.SetActive(false);
