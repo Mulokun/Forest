@@ -15,7 +15,7 @@ namespace Forest
         [HorizontalGroup("formula"), HideLabel, SuffixLabel(" ^ Rank_Level )")]
         public double Multiplier;
 
-        public readonly double Value(double level = 1)
+        public readonly double Value(int level = 1)
         {
             return Base * Math.Pow(Multiplier, level);
         }
@@ -37,7 +37,7 @@ namespace Forest
     }
 
     [CreateAssetMenu(fileName = "ShopItem", menuName = "Forest/New Shop Item")]
-    public class ShopItem : ScriptableObject
+    public class ShopItem : ScriptableObject, IUnlockable<GameContext>
     {
         public string Name;
         public string Description;
@@ -45,6 +45,7 @@ namespace Forest
         public Sprite Icon;
         [BoxGroup]
         public Condition<GameContext> UnlockCondition;
+        public Condition<GameContext> UnlockingCondition => UnlockCondition;
 
         [Header("Cost")]
         [Range(1, 250)]
@@ -54,9 +55,9 @@ namespace Forest
         public List<Cost> Costs;
 
         [Header("Modifiers")]
-        public List<Modifier> Modifiers;
+        public List<ModifierData> Modifiers;
 
-        public double GetPrice(double rank)
+        public double GetPrice(int rank)
         {
             return Formula.Value(rank);
         }

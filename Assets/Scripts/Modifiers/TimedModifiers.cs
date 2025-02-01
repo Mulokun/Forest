@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Forest
 {
     public class TimedModifier : Timed
@@ -26,7 +24,6 @@ namespace Forest
             foreach (Modifier m in Modifier.OnTickModifier)
             {
                 Context.AddTick(m);
-                Debug.Log("Add");
             }
 
             foreach (Modifier m in Modifier.OnActionModifier)

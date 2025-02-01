@@ -10,30 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65bc09e4ede719346b5aa02a701d75cf, type: 3}
-  m_Name: ShopItem_0
+  m_Name: ShopItem_1
   m_EditorClassIdentifier: 
-  Name: +1 T/S
+  Name: 
   Description: 
   Icon: {fileID: 0}
   UnlockCondition:
     ConditionValue:
       rid: 1925706936291164245
-  MaximumRank: 3
+  MaximumRank: 2
   Formula:
-    Base: 5
+    Base: 8
     Multiplier: 2
   Costs:
   - CustomCost: 0
-    FormulaCost: 5
+    FormulaCost: 8
     IsCustom: 0
   - CustomCost: 0
-    FormulaCost: 10
-    IsCustom: 0
-  - CustomCost: 0
-    FormulaCost: 20
+    FormulaCost: 16
     IsCustom: 0
   Modifiers:
-  - {fileID: 11400000, guid: 2c75a0c5e1ff2e546b9ad7821ed8ec76, type: 2}
+  - {fileID: 11400000, guid: e8a71962704cd0b4587ebbbef940d3e6, type: 2}
   references:
     version: 2
     RefIds:
@@ -41,6 +38,6 @@ MonoBehaviour:
       type: {class: VariableCheckCondition, ns: Forest, asm: Assembly-CSharp}
       data:
         IntendedResult: 1
-        variableID: 0
+        variableID: 2
         operation: 0
         value: 10

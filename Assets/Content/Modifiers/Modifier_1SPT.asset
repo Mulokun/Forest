@@ -9,8 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85c568d6f6f878e4bbb67e76d26d27b9, type: 3}
-  m_Name: Shop
+  m_Script: {fileID: 11500000, guid: 9a11451d7c863ef4db0719b89c759b1b, type: 3}
+  m_Name: Modifier_1SPT
   m_EditorClassIdentifier: 
-  Items:
-  - {fileID: 11400000, guid: e394bb417bd2fbe4c836c707dc6cd66c, type: 2}
+  IsInstant: 1
+  Duration: 0
+  InstantModifier:
+  - Variable: 9
+    Operation: 0
+    Value: 1
+  OnActionModifier: []
+  OnTickModifier: []

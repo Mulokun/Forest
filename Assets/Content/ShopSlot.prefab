@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6475134991854474072}
+  - component: {fileID: 5213381909439948348}
   - component: {fileID: 7181641630178265729}
   - component: {fileID: 6787851838599163390}
   m_Layer: 5
@@ -41,6 +42,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 250, y: 60}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &5213381909439948348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2304424410822950712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 401d78c775f81bb4e85afa76c4bd9f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 7181641630178265729}
+  itemName: {fileID: 6579902450145403702}
+  itemPrice: {fileID: 2754875292079763598}
 --- !u!114 &7181641630178265729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -357,7 +373,7 @@ GameObject:
   - component: {fileID: 2754875292079763598}
   - component: {fileID: 1760277319192784477}
   m_Layer: 5
-  m_Name: Cost
+  m_Name: Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

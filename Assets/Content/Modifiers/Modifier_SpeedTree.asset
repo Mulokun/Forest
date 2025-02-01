@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a11451d7c863ef4db0719b89c759b1b, type: 3}
-  m_Name: Modifier_3
+  m_Name: Modifier_SpeedTree
   m_EditorClassIdentifier: 
+  IsInstant: 0
   Duration: 10
   InstantModifier: []
   OnActionModifier: []
   OnTickModifier:
   - Variable: 0
     Operation: 0
-    Value: 10
+    Value: 2

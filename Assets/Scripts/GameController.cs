@@ -9,11 +9,13 @@ namespace Forest
     public class GameController : MonoBehaviour
     {
         private GameContext game = null;
+        public GameContext Game => game;
 
         [SerializeField] private GameData data;
         [SerializeField] private GameVisualizer visualizer;
         [SerializeField] private DrawTrees drawTree;
         [SerializeField] private TimeManagement timeManagement;
+        [SerializeField] private Shop shop;
 
         public ModifierData D1;
         public ModifierData D2;
@@ -34,6 +36,8 @@ namespace Forest
 
             timeManagement.Initialize();
             timeManagement.Resume();
+
+            shop.Initialize(this);
 
             InitializeModifiers();
 
@@ -125,6 +129,42 @@ namespace Forest
         {
             removeSeedAction.Value = -Math.Min(game[GameVariables.SeedsUsedPerAction].ModifiedValue, game[GameVariables.Seeds].ModifiedValue);
             gainTreeAction.Value = Math.Abs(removeSeedAction.Value) * game[GameVariables.TreesGrownPerSeed].ModifiedValue;
+        }
+
+        public void ApplyModifier(ModifierData modifier)
+        {
+            if (modifier.IsInstant)
+            {
+                foreach (Modifier m in modifier.InstantModifier)
+                {
+                    game.ApplyInstant(m);
+                }
+            }
+            else
+            {
+                TimedModifier tm = new(game, modifier);
+                timeManagement.Register(tm);
+            }
+        }
+
+        public bool TryBuy(ShopItem item, int rank)
+        {
+            if (game[GameVariables.Seeds].ModifiedValue >= item.GetPrice(rank))
+            {
+                Modifier removePrice = new(GameVariables.Seeds, Operations.Add, -item.GetPrice(rank));
+                game.ApplyInstant(removePrice);
+
+                foreach (ModifierData m in item.Modifiers)
+                {
+                    ApplyModifier(m);
+                }
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
