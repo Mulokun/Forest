@@ -1961,11 +1961,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabde4e02e39db94b905a1ce56c73bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  base_camera: {fileID: 519420031}
   treesTextValue: {fileID: 1153677004}
   seedsTextValue: {fileID: 310481188}
   seedsGainTextValue: {fileID: 0}
   tickGauge: {fileID: 0}
   tooltip: {fileID: 0}
+  prefabLeafParticle: {fileID: 10515892495014808, guid: 0557cd0d885d37545ad4b0ef1332a252, type: 3}
 --- !u!4 &1380781797
 Transform:
   m_ObjectHideFlags: 0

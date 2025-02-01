@@ -111,6 +111,7 @@ namespace Forest
             {
                 UpdateActionData();
                 game.Action();
+                visualizer.Action(p);
 
                 for (int i = 0; i < gainTreeAction.Value; i++)
                 {
