@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65bc09e4ede719346b5aa02a701d75cf, type: 3}
+  m_Name: ShopItem_0
+  m_EditorClassIdentifier: 
+  Name: 
+  Description: 
+  Icon: {fileID: 0}
+  UnlockCondition:
+    ConditionValue:
+      rid: 1925706936291164245
+  MaximumRank: 10
+  Formula:
+    Base: 8
+    Multiplier: 20
+  Costs:
+  - CustomCost: 0
+    FormulaCost: 8
+    IsCustom: 0
+  - CustomCost: 0
+    FormulaCost: 160
+    IsCustom: 0
+  - CustomCost: 0
+    FormulaCost: 3200
+    IsCustom: 0
+  - CustomCost: 0
+    FormulaCost: 64000
+    IsCustom: 0
+  - CustomCost: 0
+    FormulaCost: 1280000
+    IsCustom: 0
+  - CustomCost: 0
+    FormulaCost: 25600000
+    IsCustom: 0
+  - CustomCost: 0
+    FormulaCost: 512000000
+    IsCustom: 0
+  - CustomCost: 0
+    FormulaCost: 10240000000
+    IsCustom: 0
+  - CustomCost: 0
+    FormulaCost: 204800000000
+    IsCustom: 0
+  - CustomCost: 0
+    FormulaCost: 4096000000000
+    IsCustom: 0
+  Modifiers:
+  - {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 1925706936291164245
+      type: {class: VariableCheckCondition, ns: Forest, asm: Assembly-CSharp}
+      data:
+        IntendedResult: 1
+        variableID: 0
+        operation: 0
+        value: 0
