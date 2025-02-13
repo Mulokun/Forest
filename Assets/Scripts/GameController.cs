@@ -16,10 +16,7 @@ namespace Forest
         [SerializeField] private DrawTrees drawTree;
         [SerializeField] private TimeManagement timeManagement;
         [SerializeField] private Shop shop;
-
-        public ModifierData D1;
-        public ModifierData D2;
-        public ModifierData D3;
+        [SerializeField] private AchievementManager achievement;
 
         private Modifier gainTreeAction;
         private Modifier removeSeedAction;
@@ -38,6 +35,7 @@ namespace Forest
             timeManagement.Resume();
 
             shop.Initialize(this);
+            achievement.Initialize(this);
 
             InitializeModifiers();
 
@@ -79,24 +77,7 @@ namespace Forest
             {
                 Action();
             }
-            if (Keyboard.current.qKey.wasPressedThisFrame)
-            {
-                Debug.Log("Q");
-                TimedModifier t1 = new(game, D1);
-                timeManagement.Register(t1);
-            }
-            if (Keyboard.current.wKey.wasPressedThisFrame)
-            {
-                Debug.Log("W");
-                TimedModifier t2 = new(game, D2);
-                timeManagement.Register(t2);
-            }
-            if (Keyboard.current.eKey.wasPressedThisFrame)
-            {
-                Debug.Log("E");
-                TimedModifier t3 = new(game, D3);
-                timeManagement.Register(t3);
-            }
+
             debugPanel.UpdateValues();
         }
 
